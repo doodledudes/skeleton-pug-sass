@@ -1,0 +1,79 @@
+// sets equal width and height
+@mixin box($size) {
+  width: $size;
+  height: $size;
+}
+// set width and height
+@mixin dimension($w,$h) {
+  width: $w;
+  height: $h;
+}
+@mixin transition($property,$easing,$duration) {
+  -webkit-transition: $property $easing $duration;
+  -moz-transition: $property $easing $duration;
+  -ms-transition: $property $easing $duration;
+  -o-transition: $property $easing $duration;
+  transition: $property $easing $duration;
+}
+@mixin opacity($val) {
+  opacity: $val;
+  -moz-opacity: $val;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity="+$val+")";
+  filter: alpha(opacity=$val);
+}
+
+
+
+// Border Radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin border-radius-top($radius) {
+  -webkit-border-top-left-radius: $radius;
+     -moz-border-top-left-radius: $radius;
+      -ms-border-top-left-radius: $radius;
+          border-top-left-radius: $radius;
+  -webkit-border-top-right-radius: $radius;
+     -moz-border-top-right-radius: $radius;
+      -ms-border-top-right-radius: $radius;
+          border-top-right-radius: $radius;
+}
+@mixin border-radius-bottom($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+     -moz-border-bottom-left-radius: $radius;
+      -ms-border-bottom-left-radius: $radius;
+          border-bottom-left-radius: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+     -moz-border-bottom-right-radius: $radius;
+      -ms-border-bottom-right-radius: $radius;
+          border-bottom-right-radius: $radius;
+}
+@mixin border-radius-left($radius) {
+  -webkit-border-top-left-radius: $radius;
+     -moz-border-top-left-radius: $radius;
+      -ms-border-top-left-radius: $radius;
+          border-top-left-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+     -moz-border-bottom-left-radius: $radius;
+      -ms-border-bottom-left-radius: $radius;
+          border-bottom-left-radius: $radius;
+}
+@mixin border-radius-right($radius) {
+  -webkit-border-top-right-radius: $radius;
+     -moz-border-top-right-radius: $radius;
+      -ms-border-top-right-radius: $radius;
+          border-top-right-radius: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+     -moz-border-bottom-right-radius: $radius;
+      -ms-border-bottom-right-radius: $radius;
+          border-bottom-right-radius: $radius;
+}
+
+
+@mixin box-shadow($value) {
+  -webkit-box-shadow: $value;
+  box-shadow: $value;
+}

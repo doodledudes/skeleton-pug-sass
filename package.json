@@ -1,0 +1,19 @@
+{
+  "name": "skeleton-pug-sass",
+  "version": "1.0.0",
+  "description": "Project dependencies",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-pug": "^3.0.3",
+    "gulp-sass": "^2.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rodan Luzuriaga",
+  "license": "ISC"
+}
