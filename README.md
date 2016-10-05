@@ -1,5 +1,5 @@
-# skeleton-jade-scss
-A starter template using jade and scss.
+# skeleton-pug-sass
+A starter template using jade and sass.
 
 ## What is a Skeleton?
 A skeleton is basically an application boilerplate that provides a good starting point for new applications.
@@ -21,7 +21,7 @@ $ bower install
 Running the **'npm install'** will install the following dependencies I have specified on the **'package.json'**.
 - gulp
 - gulp-clean
-- gulp-jade
+- gulp-pug
 - gulp-sass
 - browser-sync (if you prefer you may just serve your project using [harpjs](http://harpjs.com/))
 - gulp-autoprefixer (optional)
@@ -41,6 +41,6 @@ and
 ```
 $ gulp serve
 ```
-What **'gulp serve'** does is it runs the **'serve'** task inside the **'gulpfile.js'**, automatically open up a new browser window and watch your **'jade'** and **'sass'** files.
+What **'gulp serve'** does is it runs the **'serve'** task inside the **'gulpfile.js'**, automatically open up a new browser window and watch your **'pug'** and **'sass'** files.
 
-If you're not familiar with ['Jade'](http://jade-lang.com/) and ['Sass'](http://sass-lang.com/) you can visit their site and look for the documentation. Enjoy!
+If you're not familiar with ['Pug'](https://pugjs.org/api/getting-started.html) and ['Sass'](http://sass-lang.com/) you can visit their site and look for the documentation. Enjoy!
