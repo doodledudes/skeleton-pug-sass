@@ -10,7 +10,8 @@ var root  = './';
 var dir   = 'public'; // you may change this.
 var paths = {
   pug: ['./*.pug', '!**[^_]/*.pug'],
-  scss: 'assets/css/**/*.scss'
+  scss: 'assets/css/**/*.scss',
+  js: 'assets/scripts/**/*.js'
 }
 
 // - ###########################################################################
@@ -38,8 +39,20 @@ gulp.task('pug', function() {
           doctype: 'html',
           pretty: true
       }))
-      .pipe(gulp.dest(root + dir))
-      .pipe(browserSync.stream());
+      .pipe(gulp.dest(root + dir));
+});
+gulp.task('pug-watch', ['pug'], function (done) {
+    browserSync.reload();
+    done();
+});
+
+// - ###########################################################################
+// - Compile JS files
+// - ###########################################################################
+gulp.task('js', function() {
+    return gulp.src(paths.js)
+      .pipe(gulp.dest(root + dir + '/assets/scripts'))
+      .pipe(browserSync.stream());;
 });
 
 // - ###########################################################################
@@ -60,10 +73,8 @@ var assetsBaseDir = "./assets";
 var assets = [
     assetsBaseDir + '/css/**/*.css',
     assetsBaseDir + '/images/**/*.*',
-    assetsBaseDir + '/scripts/**/*.*',
     assetsBaseDir + '/vendor/bootstrap/dist/**/*.*',
-    assetsBaseDir + '/fonts/**/*.*',
-    "!" + assetsBaseDir + '/css/*.scss',
+    assetsBaseDir + '/fonts/**/*.*'
 ];
 gulp.task('copy', function() {
     gulp.src(assets, { base: './'})
@@ -106,5 +117,6 @@ gulp.task('serve', function() {
     }
   });
   gulp.watch(paths.scss, ['sass']);
-  gulp.watch('./**/*.pug',['pug']);
+  gulp.watch(paths.js, ['js']);
+  gulp.watch('./**/*.pug',['pug-watch']);
 });
