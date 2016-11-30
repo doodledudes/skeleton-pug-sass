@@ -1,11 +1,11 @@
 # skeleton-pug-sass
-A starter template using jade and sass.
+A starter template using pug and sass.
 
 ## What is a Skeleton?
 A skeleton is basically an application boilerplate that provides a good starting point for new applications.
 
 ## What is this for?
-You can use this skeleton as a starting point on writing your code in jade and scss or sass instead of semantic html/css.
+You can use this skeleton as a starting point on writing your code in pug and scss or sass instead of semantic html/css.
 
 ## How does it work?
 Dont think too much. It's easy. Just install the following and follow the instructions.
@@ -13,7 +13,7 @@ Dont think too much. It's easy. Just install the following and follow the instru
 - [Bower](https://bower.io/#install-bower)
 - [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 
-Once installed open the **Terminal** and navigate to the directory where the 'skeleton-jade-scss' folder is located and then run these two commands.
+Once installed open the **Terminal** and navigate to the directory where the 'skeleton-pug-scss' folder is located and then run these two commands.
 ```
 $ npm install
 $ bower install
