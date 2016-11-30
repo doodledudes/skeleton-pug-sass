@@ -86,13 +86,13 @@ gulp.task('copy', function() {
 // - ###########################################################################
 var bowerBaseDir = "./bower_components";
 var bower = [
-    bowerBaseDir + '/bootstrap/dist/**/*.*',
-    bowerBaseDir + '/jquery/dist/**/*.*',
-    bowerBaseDir + '/font-awesome/**/*.*',
-    '!' + bowerBaseDir + '/font-awesome/scss/**', // Exclude 'scss' folder
-    '!' + bowerBaseDir + '/font-awesome/less/**', // Exclude 'less' folder
-    '!' + bowerBaseDir + '/font-awesome/*.json', // Exclude '.json' files
-    '!' + bowerBaseDir + '/font-awesome/*.txt' // Exclude '.txt' files
+    bowerBaseDir + '/**/*.*',
+    '!' + bowerBaseDir + '/**/scss/**',
+    '!' + bowerBaseDir + '/**/less/**',
+    '!' + bowerBaseDir + '/**/external/**',
+    '!' + bowerBaseDir + '/**/src/**',
+    '!' + bowerBaseDir + '/**/*.json',
+    '!' + bowerBaseDir + '/**/*.txt'
 ];
 gulp.task('bower', function() {
     gulp.src(bower, { base: './'})
