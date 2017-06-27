@@ -5,6 +5,7 @@ var sass          = require('gulp-sass');
 var browserSync   = require('browser-sync').create();
 var autoprefixer  = require('gulp-autoprefixer');
 var exec          = require('child_process').exec;
+var imagemin      = require('gulp-imagemin');
 // @phil
 var debug = require('gulp-debug');
 var changed = require('gulp-changed');
@@ -121,14 +122,13 @@ gulp.task('sass', function() {
 var assetsBaseDir = "./assets";
 var assets = [
     assetsBaseDir + '/css/**/*.css',
-    assetsBaseDir + '/images/**/*.*',
     assetsBaseDir + '/vendor/bootstrap/dist/**/*.*',
-    assetsBaseDir + '/fonts/**/*.*',
-    "!" + assetsBaseDir + '/css/*.scss',
-    "!" + assetsBaseDir + '/vendor/**/*.pug'
+    assetsBaseDir + '/vendor/authservice/**/*.*',
+    assetsBaseDir + '/app/**/*.*',
+    assetsBaseDir + '/fonts/**/*.*'
 ];
-gulp.task('copy', function() {
-    gulp.src(assets, { base: './'})
+gulp.task('copy', function () {
+    gulp.src(assets, { base: './' })
         .pipe(gulp.dest(root + dir));
 });
 
@@ -204,3 +204,19 @@ gulp.task('serve-all', function() {
     //    gulp.watch('./**/*.pug',['pug-watch']);
     gulp.watch(paths.pug,['pug-all']);
 });
+
+// - ###########################################################################
+// - Optimize Images
+// - ###########################################################################
+gulp.task('imagemin', () =>
+    gulp.src('./assets/images/*')
+        .pipe(imagemin(
+          {
+            interlaced: true,
+            progressive: true,
+            optimizationLevel: 5,
+            svgoPlugins: [{removeViewBox: true}]
+          }
+        ))
+        .pipe(gulp.dest(root + dir + '/assets/images'))
+);
