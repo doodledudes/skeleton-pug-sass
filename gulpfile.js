@@ -31,7 +31,7 @@ gulp.task('default', ['clean'], function(cb) {
         cb(err);
     });
 });
-gulp.task('main', ['pug-all', 'sass', 'js', 'copy', 'bower']);
+gulp.task('main', ['pug-all', 'sass', 'js', 'copy', 'bower', 'imagemin']);
 
 // - ###########################################################################
 // - Compile PUG files to HTML
