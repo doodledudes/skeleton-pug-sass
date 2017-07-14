@@ -114,7 +114,6 @@ gulp.task('sass', function() {
 var assetsBaseDir = "./assets";
 var assets = [
     assetsBaseDir + '/css/**/*.css',
-    assetsBaseDir + '/vendor/bootstrap/dist/**/*.*',
     assetsBaseDir + '/vendor/authservice/**/*.*',
     assetsBaseDir + '/app/**/*.*',
     assetsBaseDir + '/fonts/**/*.*'
