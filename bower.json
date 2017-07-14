@@ -16,6 +16,22 @@
   ],
   "dependencies": {
     "font-awesome": "fontawesome#^4.5.0",
-    "jquery": "^1.9.1"
+    "jquery": "1.9.1",
+    "bootstrap": "3.3.7",
+    "owl.carousel": "^2.2.1"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "**/*.min.js",
+        "**/*.min.css",
+        "**/fonts/*.*"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "**/*.*"
+      ]
+    }
   }
 }

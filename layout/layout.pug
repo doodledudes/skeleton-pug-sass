@@ -9,14 +9,16 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1")
     link(rel="icon", type="image/png", href="assets/images/favicon.png")
     
-    // Bower Components
-    link(href='assets/vendor/bootstrap/dist/css/bootstrap.css', rel='stylesheet', type='text/css')
-    link(href='bower_components/font-awesome/css/font-awesome.css', rel='stylesheet', type='text/css')
+    //- DO NOT DELETE THE NEXT TWO LINES. THIS IS WHERE 'wiredep' injects the bower components
+    // bower:css
+    // endbower
     
     //- IE10 viewport hack for Surface/desktop Windows 8 bug
     link(href='assets/css/ie10-viewport-bug-workaround.css', rel='stylesheet')
-    //- Custom styles for this template
+      
+    //- MAIN STYLESHEET
     link(href='assets/css/main.css', rel='stylesheet')
+    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -31,11 +33,13 @@ html(lang="en")
     
     include ../includes/_footer.pug
     
-    // Bower Components
-    script(src="bower_components/jquery/dist/jquery.js", type="text/javascript")
-    script(src="assets/vendor/bootstrap/dist/js/bootstrap.js", type="text/javascript")
+    //- DO NOT DELETE THE NEXT TWO LINES. THIS IS WHERE 'wiredep' injects the bower components
+    // bower:js
+    // endbower
+    
+    //- EXTERNAL SCRIPTS
     script(src="assets/scripts/ie10-viewport-bug-workaround.js", type="text/javascript")
     script(src="assets/scripts/main.js", type="text/javascript")
 
-    // page scripts goes here...
+    //- PAGE SCRIPTS
     block scripts

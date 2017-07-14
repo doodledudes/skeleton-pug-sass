@@ -1,11 +1,13 @@
-var gulp          = require('gulp');
-var clean         = require('gulp-clean');
-var pug           = require('gulp-pug');
-var sass          = require('gulp-sass');
-var browserSync   = require('browser-sync').create();
-var autoprefixer  = require('gulp-autoprefixer');
-var exec          = require('child_process').exec;
-var imagemin      = require('gulp-imagemin');
+var gulp            = require('gulp');
+var clean           = require('gulp-clean');
+var pug             = require('gulp-pug');
+var sass            = require('gulp-sass');
+var browserSync     = require('browser-sync').create();
+var autoprefixer    = require('gulp-autoprefixer');
+var exec            = require('child_process').exec;
+var imagemin        = require('gulp-imagemin');
+var mainBowerFiles  = require('main-bower-files');
+var wiredep         = require('wiredep').stream;
 // @phil
 var debug = require('gulp-debug');
 var changed = require('gulp-changed');
@@ -21,9 +23,7 @@ var paths = {
     js: 'assets/scripts/**/*.js'
 }
 
-// - ###########################################################################
-// - Runs the 'clean' task first before it run all other tasks.
-// - ###########################################################################
+// -----------------------------------------------------------------------------[ Runs the 'clean' task first before it run all other tasks. ]
 gulp.task('default', ['clean'], function(cb) {
     exec('gulp main', function(err,stdout,stderr) {
         console.log(stdout);
@@ -33,9 +33,7 @@ gulp.task('default', ['clean'], function(cb) {
 });
 gulp.task('main', ['pug-all', 'sass', 'js', 'copy', 'bower', 'imagemin']);
 
-// - ###########################################################################
-// - Compile PUG files to HTML
-// - ###########################################################################
+// -----------------------------------------------------------------------------[ Compile PUG files to HTML ]
 gulp.task('pug-all', function() {
     /*
     * Compile ALL pug files except files with
@@ -94,9 +92,7 @@ gulp.task('watch', () => {
 });
 
 
-// - ###########################################################################
-// - Compile JS files
-// - ###########################################################################
+// -----------------------------------------------------------------------------[ Compile JS files ]
 gulp.task('js', function() {
     return gulp.src(paths.js)
     // .pipe(browserify())
@@ -105,9 +101,7 @@ gulp.task('js', function() {
     .pipe(browserSync.stream());;
 });
 
-// - ###########################################################################
-// - Compile SASS files to CSS
-// - ###########################################################################
+// -----------------------------------------------------------------------------[ Compile SASS files to CSS ]
 gulp.task('sass', function() {
     return gulp.src(paths.scss)
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
@@ -116,9 +110,7 @@ gulp.task('sass', function() {
     .pipe(browserSync.stream());
 });
 
-// - ###########################################################################
-// - Copy assets (css, images, scripts, etc...)
-// - ###########################################################################
+// -----------------------------------------------------------------------------[ Copy assets (css, images, scripts, etc...) ]
 var assetsBaseDir = "./assets";
 var assets = [
     assetsBaseDir + '/css/**/*.css',
@@ -132,27 +124,22 @@ gulp.task('copy', function () {
         .pipe(gulp.dest(root + dir));
 });
 
-// - ###########################################################################
-// - Copy plugins from bower
-// - ###########################################################################
-var bowerBaseDir = "./bower_components";
-var bower = [
-    bowerBaseDir + '/**/*.*',
-    '!' + bowerBaseDir + '/**/scss/**',
-    '!' + bowerBaseDir + '/**/less/**',
-    '!' + bowerBaseDir + '/**/external/**',
-    '!' + bowerBaseDir + '/**/src/**',
-    '!' + bowerBaseDir + '/**/*.json',
-    '!' + bowerBaseDir + '/**/*.txt'
-];
-gulp.task('bower', function() {
-    gulp.src(bower, { base: './'})
-        .pipe(gulp.dest(root + dir));
+// -----------------------------------------------------------------------------[ Copy plugins from bower ]
+gulp.task("bower-css", ['bower-js'], function() {
+    return gulp.src(mainBowerFiles('**/*.{eot,svg,ttf,woff,woff2,css}'), { base:  './bower_components' })
+    .pipe(gulp.dest(root + dir + '/bower_components'));
+});
+gulp.task("bower-js", function() {
+    return gulp.src(mainBowerFiles(['**/*.js']), { base:  './bower_components' })
+    .pipe(gulp.dest(root + dir + '/bower_components'));
+});
+gulp.task('bower', ['bower-css', 'pug-all'], function () {
+  gulp.src(root + dir + '/index.html')
+    .pipe(wiredep())
+    .pipe(gulp.dest(root + dir));
 });
 
-// - ###########################################################################
-// - Clean task (deletes the public folder)
-// - ###########################################################################
+// -----------------------------------------------------------------------------[ Clean task (deletes the public folder) ]
 gulp.task('clean', function() {
     return gulp.src(root + dir, { read: false })
     .pipe(clean({force: true})); // added the 'force' option because the
@@ -160,9 +147,7 @@ gulp.task('clean', function() {
     // root folder
 });
 
-// - ###########################################################################
-// - Serve app and watch
-// - ###########################################################################
+// -----------------------------------------------------------------------------[ Serve app and watch ]
 gulp.task('serve', function() {
     browserSync.init({
         server: {
@@ -205,9 +190,7 @@ gulp.task('serve-all', function() {
     gulp.watch(paths.pug,['pug-all']);
 });
 
-// - ###########################################################################
-// - Optimize Images
-// - ###########################################################################
+// -----------------------------------------------------------------------------[ Optimize Images ]
 gulp.task('imagemin', () =>
     gulp.src('./assets/images/*')
         .pipe(imagemin(
