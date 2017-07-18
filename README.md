@@ -1,3 +1,8 @@
+---
+# What's new
+- angularjs (AngularJS v1.6.5)
+- gulp-inject (no more manual linking of js/css on the page)
+---
 # skeleton-pug-sass
 A starter template using pug and sass.
 
