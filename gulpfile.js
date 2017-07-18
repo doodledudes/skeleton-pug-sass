@@ -190,7 +190,7 @@ gulp.task('serve-all', function() {
 
 // -----------------------------------------------------------------------------[ Optimize Images ]
 gulp.task('imagemin', () =>
-  gulp.src('./assets/images/*')
+  gulp.src('./assets/images/**/*.*')
     .pipe(imagemin(
       {
         interlaced: true,
