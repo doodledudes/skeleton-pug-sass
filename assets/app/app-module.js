@@ -3,6 +3,6 @@ var app;
 (function() {
 
 	"use strict";
-	app = angular.module('skeletonApp', ['ngRoute', 'ngSanitize']);
+	app = angular.module('skeletonApp', ['ngRoute', 'ngSanitize', 'ui.bootstrap']);
 
 })();
