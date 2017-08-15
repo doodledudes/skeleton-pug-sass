@@ -128,8 +128,8 @@ gulp.task('inject-all', function () {
   var sources = gulp.src(['./assets/**/*.js']);
   var cssFiles = gulp.src(paths.scss).pipe(sass());
 
-  gulp.src(root + dir + '/index.html')
-    .pipe(inject(gulp.src(mainBowerFiles(), {read: false}), {name: 'bower'}))
+  gulp.src(root + dir + '/*.html')
+    .pipe(inject(gulp.src(mainBowerFiles({paths: './'}), {read: false}), {name: 'bower'}))
     .pipe(inject(es.merge(
       cssFiles,
       sources

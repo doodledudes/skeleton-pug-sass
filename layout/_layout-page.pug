@@ -1,0 +1,43 @@
+doctype html
+html(lang="en")
+  head
+    // Title block allowing child pages to override
+    title Skeleton for Pug and Sass
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="description", content="")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="icon", type="image/png", href="assets/images/favicon.ico")
+    
+    //- BOWER COMPONENTS
+    // bower:css
+    // endinject
+      
+    //- APP JS
+    // inject:css
+    // endinject
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  body
+    
+    include ../includes/_header.pug
+    
+    block content
+    
+    include ../includes/_footer.pug
+    
+    //- BOWER COMPONENTS
+    // bower:js
+    // endinject
+    
+    //- APP JS
+    // inject:js
+    // endinject
+
+    //- PAGE SCRIPTS
+    block scripts
