@@ -59,6 +59,9 @@ gulp.task('pug-all', function() {
 gulp.task('pug-incremental', (done) => {
 
   var dest = root + dir;
+  var sources = gulp.src(['./assets/**/*.js']);
+  var cssFiles = gulp.src(paths.scss).pipe(sass());
+
   gulp.src(paths.pug)
   // Look for files newer than the corresponding .html
   // file in the destination directory.
@@ -68,6 +71,12 @@ gulp.task('pug-incremental', (done) => {
     doctype: 'html',
     pretty: true
   }))
+  // Injects the assets after file has changed
+  .pipe(inject(gulp.src(mainBowerFiles({paths: './'}), {read: false}), {name: 'bower'}))
+  .pipe(inject(es.merge(
+    cssFiles,
+    sources
+  )))
   // Handle ug errors nicely
   .on('error', function(err){
     gutil.log(err.message);
