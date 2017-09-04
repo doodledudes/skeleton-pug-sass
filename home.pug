@@ -20,12 +20,28 @@ section
     .clearfix
     br
     .card
+      table.table.table-condensed.table-hover.table-striped
+        thead
+          tr
+            th ID
+            th(drag-me, drop-me) Sender
+            th(drag-me, drop-me) Received
+          //- tr
+        //- thead
+        tbody
+          tr
+            td 10238
+            td eduardo@pingpong.com
+            td 14.10.2013
+          //- tr
+    br
+    .card
       table#grid-basic.table.table-condensed.table-hover.table-striped
         thead
           tr
             th(data-column-id='id', data-type='numeric') ID
-            th(data-column-id='sender') Sender
-            th(data-column-id='received', data-order='desc') Received
+            th(data-column-id='sender', drag-me, drop-me) Sender
+            th(data-column-id='received', data-order='desc', drag-me, drop-me) Received
           //- tr
         //- thead
         tbody
