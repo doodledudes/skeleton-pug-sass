@@ -6,7 +6,7 @@ var browserSync     = require('browser-sync').create();
 var autoprefixer    = require('gulp-autoprefixer');
 var exec            = require('child_process').exec;
 var imagemin        = require('gulp-imagemin');
-var mainBowerFiles  = require('main-bower-files');
+var bowerFiles  = require('main-bower-files');
 var inject          = require('gulp-inject');
 var es              = require('event-stream');
 var runSequence     = require('run-sequence');
@@ -24,6 +24,7 @@ var paths = {
   scss: 'assets/css/**/*.scss',
   js: 'assets/**/*.js'
 }
+var dest = root + dir;
 
 gulp.task('main', ['clean'], function(callback) {
   runSequence('bower-copy', ['pug-all', 'copy', 'js', 'sass'], 'inject-all', callback);
@@ -50,7 +51,7 @@ gulp.task('pug-all', function() {
   // Write a message
   .pipe(debug({title:'Installed'}))
   // Place the resultant HTML file into the destination directory.
-  .pipe(gulp.dest(root + dir))
+  .pipe(gulp.dest(dest))
   // Refresh the page in the browser
   .pipe(browserSync.stream());
 });
@@ -58,10 +59,8 @@ gulp.task('pug-all', function() {
 // @phil
 gulp.task('pug-incremental', (done) => {
 
-  var dest = root + dir;
   var sources = gulp.src(['./assets/**/*.js']);
   var cssFiles = gulp.src(paths.scss).pipe(sass());
-
   gulp.src(paths.pug)
   // Look for files newer than the corresponding .html
   // file in the destination directory.
@@ -72,11 +71,13 @@ gulp.task('pug-incremental', (done) => {
     pretty: true
   }))
   // Injects the assets after file has changed
-  .pipe(inject(gulp.src(mainBowerFiles({paths: './'}), {read: false}), {name: 'bower'}))
+  .pipe(inject(gulp.src(bowerFiles(), {read: false}), {name: 'bower'}))
   .pipe(inject(es.merge(
     cssFiles,
     sources
-  )))
+  ), {
+    addRootSlash: false
+  }))
   // Handle ug errors nicely
   .on('error', function(err){
     gutil.log(err.message);
@@ -100,7 +101,7 @@ gulp.task('watch', () => {
 // -----------------------------------------------------------------------------[ Compile JS files ]
 gulp.task('js', function() {
   return gulp.src(paths.js)
-  .pipe(gulp.dest(root + dir + '/assets'))
+  .pipe(gulp.dest(dest + '/assets'))
   .pipe(browserSync.stream());;
 });
 
@@ -109,7 +110,7 @@ gulp.task('sass', function() {
   return gulp.src(paths.scss)
   .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
   .pipe(autoprefixer())
-  .pipe(gulp.dest(root + dir + '/assets/css'))
+  .pipe(gulp.dest(dest + '/assets/css'))
   .pipe(browserSync.stream());
 });
 
@@ -123,32 +124,34 @@ var assets = [
 ];
 gulp.task('copy', ['imagemin'], function () {
   gulp.src(assets, { base: './' })
-    .pipe(gulp.dest(root + dir));
+    .pipe(gulp.dest(dest));
 });
 
 // -----------------------------------------------------------------------------[ COPY "bower_components" TO "public" FOLDER ]
 gulp.task("bower-copy", function() {
-  return gulp.src(mainBowerFiles('**/*.{eot,svg,ttf,woff,woff2,css,js}'), { base:  './bower_components' })
-  .pipe(gulp.dest(root + dir + '/bower_components'));
+  return gulp.src(bowerFiles('**/*.{eot,svg,ttf,woff,woff2,css,js}'), { base:  './bower_components' })
+  .pipe(gulp.dest(dest + '/bower_components'));
 });
 
 // -----------------------------------------------------------------------------[ INJECT CSS/JS/BOWER_COMPONENTS ASSETS DIRECTLY TO "index.html" ]
 gulp.task('inject-all', function () {
   var sources = gulp.src(['./assets/**/*.js']);
   var cssFiles = gulp.src(paths.scss).pipe(sass());
-
-  gulp.src(root + dir + '/*.html')
-    .pipe(inject(gulp.src(mainBowerFiles({paths: './'}), {read: false}), {name: 'bower'}))
+  var injectBowerFiles = gulp.src(bowerFiles(), {read: false});
+  gulp.src(dest + '/*.html')
+    .pipe(inject(injectBowerFiles, {name: 'bower'}))
     .pipe(inject(es.merge(
       cssFiles,
       sources
-    )))
-    .pipe(gulp.dest(root + dir));
+    ), {
+      addRootSlash: false
+    }))
+    .pipe(gulp.dest(dest));
 });
 
 // -----------------------------------------------------------------------------[ Clean task (deletes the public folder) ]
 gulp.task('clean', function() {
-  return gulp.src(root + dir, { read: false })
+  return gulp.src(dest, { read: false })
   .pipe(clean({force: true})); // added the 'force' option because the
   // directory is outside the gulpfile.js's
   // root folder
@@ -158,7 +161,7 @@ gulp.task('clean', function() {
 gulp.task('serve', function() {
   browserSync.init({
     server: {
-      baseDir: root + dir
+      baseDir: dest
     },
     port: 3030,
     //reloadDelay: 200 // Give the server time to pick up the new files.
@@ -180,7 +183,7 @@ gulp.task('serve', function() {
 gulp.task('serve-all', function() {
   browserSync.init({
     server: {
-      baseDir: root + dir
+      baseDir: dest
     },
     port: 3030,
     //reloadDelay: 200 // Give the server time to pick up the new files.
@@ -208,5 +211,5 @@ gulp.task('imagemin', () =>
         svgoPlugins: [{removeViewBox: true}]
       }
     ))
-    .pipe(gulp.dest(root + dir + '/assets/images'))
+    .pipe(gulp.dest(dest + '/assets/images'))
 );
