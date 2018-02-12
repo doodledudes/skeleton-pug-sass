@@ -1,6 +1,6 @@
 ---
 # What's new
-- angularjs (AngularJS v1.6.5)
+- angularjs was removed in this update
 - gulp-inject (no more manual linking of js/css on the page)
 ---
 # skeleton-pug-sass
