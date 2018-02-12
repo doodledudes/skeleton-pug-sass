@@ -16,12 +16,7 @@
   ],
   "dependencies": {
     "font-awesome": "fontawesome#^4.5.0",
-    "jquery": "3.2.1",
-    "angular": "1.6.5",
-    "angular-sanitize": "1.6.5",
-    "angular-route": "1.6.5",
-    "angular-bootstrap": "2.5.0",
-    "angular-dragtable": "^1.0.10",
+    "jquery": "^3.3.1",
     "bootstrap": "^4.0.0"
   },
   "overrides": {
@@ -29,14 +24,7 @@
       "main": [
         "**/*.min.css",
         "**/fonts/*.*",
-        "js/dropdown.js"
-      ]
-    },
-    "angular-bootstrap": {
-      "main": [
-        "**/*.min.js",
-        "**/*.css",
-        "**/fonts/*.*"
+        "**/dist/js/*.min.js"
       ]
     },
     "font-awesome": {
