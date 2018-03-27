@@ -1,0 +1,679 @@
+extends ./layout/_layout.pug
+
+block content
+
+  section.section
+    .container
+      h1.title Elements
+      hr
+      .columns
+        .column
+          h2.subtitle Box
+          .box
+            article.media
+              .media-left
+                figure.image.is-64x64
+                  img(src='https://bulma.io/images/placeholders/128x128.png', alt='Image')
+              .media-content
+                .content
+                  p
+                    strong John Smith
+                    small @johnsmith
+                    small 31m
+                    br
+                    |           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                nav.level.is-mobile
+                  .level-left
+                    a.level-item
+                      span.icon.is-small
+                        i.fas.fa-reply
+                      //- span
+                    //- a
+                    a.level-item
+                      span.icon.is-small
+                        i.fas.fa-retweet
+                      //- span
+                    //- a
+                    a.level-item
+                      span.icon.is-small
+                        i.fas.fa-heart
+                      //- span
+                    //- a
+                  //- .level-left
+                //- nav
+              //- media-content
+            //- article
+          //- box
+          h2.subtitle Delete
+          .card
+            .card-content
+              a.delete.is-small
+              a.delete
+              a.delete.is-medium
+              a.delete.is-large
+            //- card-content
+          //- card
+          br
+          h2.subtitle Icons
+          .card
+            .card-content
+              span.icon.has-text-info
+                i.fas.fa-info-circle
+              span.icon.has-text-success
+                i.fas.fa-check-square
+              span.icon.has-text-warning
+                i.fas.fa-exclamation-triangle
+              span.icon.has-text-danger
+                i.fas.fa-ban
+            //- card-content
+          //- card
+          br
+          h2.subtitle Image
+          .card
+            .card-content
+              figure.image.is-128x128
+                img(src='https://bulma.io/images/placeholders/128x128.png')
+            //- card-content
+          //- card
+        //- column
+        .column
+          h2.subtitle Buttons
+          .card
+            .card-content
+              a.button Anchor
+              button.button Button
+              input.button(type='submit', value='Submit input')
+              input.button(type='reset', value='Reset input')
+              hr.is-clearfix
+              a.button.is-white White
+              a.button.is-light Light
+              a.button.is-dark Dark
+              a.button.is-black Black
+              a.button.is-text Text
+              hr.is-clearfix
+              a.button.is-primary Primary
+              a.button.is-link Link
+              a.button.is-info Info
+              a.button.is-success Success
+              a.button.is-warning Warning
+              a.button.is-danger Danger
+              hr.is-clearfix
+              a.button.is-small Small
+              a.button Normal
+              a.button.is-medium Medium
+              a.button.is-large Large
+              hr.is-clearfix
+              a.button.is-outlined Outlined
+              a.button.is-primary.is-outlined Outlined
+              a.button.is-link.is-outlined Outlined
+              a.button.is-info.is-outlined Outlined
+              a.button.is-success.is-outlined Outlined
+              a.button.is-danger.is-outlined Outlined
+            //- card-content
+          //- card
+        //- column
+      //- columns
+      .columns
+        .column
+          h2.subtitle Content
+          .card
+            .card-content
+              .content
+                h1 Hello World
+                p
+                  | Lorem ipsum
+                  sup
+                    a [1]
+                  |  dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque. Sub
+                  sub script
+                  |  works as well!
+                h2 Second level
+                p
+                  | Curabitur accumsan turpis pharetra 
+                  strong augue tincidunt
+                  |  blandit. Quisque condimentum maximus mi, sit amet commodo arcu rutrum id. Proin pretium urna vel cursus venenatis. Suspendisse potenti. Etiam mattis sem rhoncus lacus dapibus facilisis. Donec at dignissim dui. Ut et neque nisl.
+                ul
+                  li In fermentum leo eu lectus mollis, quis dictum mi aliquet.
+                  li Morbi eu nulla lobortis, lobortis est in, fringilla felis.
+                  li Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.
+                  li Ut non enim metus.
+                h3 Third level
+                p
+                  | Quisque ante lacus, malesuada ac auctor vitae, congue 
+                  a(href='#') non ante
+                  | . Phasellus lacus ex, semper ac tortor nec, fringilla condimentum orci. Fusce eu rutrum tellus.
+                ol
+                  li Donec blandit a lorem id convallis.
+                  li Cras gravida arcu at diam gravida gravida.
+                  li Integer in volutpat libero.
+                  li Donec a diam tellus.
+                  li Aenean nec tortor orci.
+                  li Quisque aliquam cursus urna, non bibendum massa viverra eget.
+                  li Vivamus maximus ultricies pulvinar.
+                blockquote
+                  | Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut blandit est tellus sit amet turpis.
+                p
+                  | Quisque at semper enim, eu hendrerit odio. Etiam auctor nisl et 
+                  em justo sodales
+                  |  elementum. Maecenas ultrices lacus quis neque consectetur, et lobortis nisi molestie.
+                p
+                  | Sed sagittis enim ac tortor maximus rutrum. Nulla facilisi. Donec mattis vulputate risus in luctus. Maecenas vestibulum interdum commodo.
+                dl
+                  dt Web
+                  dd The part of the Internet that contains websites and web pages
+                  dt HTML
+                  dd A markup language for creating web pages
+                  dt CSS
+                  dd A technology to make HTML look better
+                p
+                  | Suspendisse egestas sapien non felis placerat elementum. Morbi tortor nisl, suscipit sed mi sit amet, mollis malesuada nulla. Nulla facilisi. Nullam ac erat ante.
+                h4 Fourth level
+                p
+                  | Nulla efficitur eleifend nisi, sit amet bibendum sapien fringilla ac. Mauris euismod metus a tellus laoreet, at elementum ex efficitur.
+                pre.
+                  \n<!DOCTYPE html>
+                  <html>
+                    <head>
+                      <title>Hello World</title>
+                    </head>
+                    <body>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec nulla vitae mollis.</p>
+                    </body>
+                  </html>
+                p
+                  | Maecenas eleifend sollicitudin dui, faucibus sollicitudin augue cursus non. Ut finibus eleifend arcu ut vehicula. Mauris eu est maximus est porta condimentum in eu justo. Nulla id iaculis sapien.
+                table
+                  thead
+                    tr
+                      th One
+                      th Two
+                  tbody
+                    tr
+                      td Three
+                      td Four
+                    tr
+                      td Five
+                      td Six
+                    tr
+                      td Seven
+                      td Eight
+                    tr
+                      td Nine
+                      td Ten
+                    tr
+                      td Eleven
+                      td Twelve
+                p
+                  | Phasellus porttitor enim id metus volutpat ultricies. Ut nisi nunc, blandit sed dapibus at, vestibulum in felis. Etiam iaculis lorem ac nibh bibendum rhoncus. Nam interdum efficitur ligula sit amet ullamcorper. Etiam tristique, leo vitae porta faucibus, mi lacus laoreet metus, at cursus leo est vel tellus. Sed ac posuere est. Nunc ultricies nunc neque, vitae ultricies ex sodales quis. Aliquam eu nibh in libero accumsan pulvinar. Nullam nec nisl placerat, pretium metus vel, euismod ipsum. Proin tempor cursus nisl vel condimentum. Nam pharetra varius metus non pellentesque.
+                h5 Fifth level
+                p
+                  | Aliquam sagittis rhoncus vulputate. Cras non luctus sem, sed tincidunt ligula. Vestibulum at nunc elit. Praesent aliquet ligula mi, in luctus elit volutpat porta. Phasellus molestie diam vel nisi sodales, a eleifend augue laoreet. Sed nec eleifend justo. Nam et sollicitudin odio.
+                figure
+                  img(src='https://bulma.io/images/placeholders/256x256.png')
+                  img(src='https://bulma.io/images/placeholders/256x256.png')
+                  figcaption
+                    | Figure 1: Some beautiful placeholders
+                h6 Sixth level
+                p
+                  | Cras in nibh lacinia, venenatis nisi et, auctor urna. Donec pulvinar lacus sed diam dignissim, ut eleifend eros accumsan. Phasellus non tortor eros. Ut sed rutrum lacus. Etiam purus nunc, scelerisque quis enim vitae, malesuada ultrices turpis. Nunc vitae maximus purus, nec consectetur dui. Suspendisse euismod, elit vel rutrum commodo, ipsum tortor maximus dui, sed varius sapien odio vitae est. Etiam at cursus metus.
+        //- column
+        .column
+          h2.subtitle Notifications
+          .notification
+            button.delete
+            |   Lorem ipsum dolor sit amet, consectetur
+            |   adipiscing elit lorem ipsum dolor. 
+            strong Pellentesque risus mi
+            | , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum 
+            a felis venenatis
+            |  efficitur. Sit amet,
+            |   consectetur adipiscing elit
+          .notification.is-primary
+            button.delete
+            |   Primar lorem ipsum dolor sit amet, consectetur
+            |   adipiscing elit lorem ipsum dolor. 
+            strong Pellentesque risus mi
+            | , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum 
+            a felis venenatis
+            |  efficitur. Sit amet,
+            |   consectetur adipiscing elit
+          .notification.is-link
+            button.delete
+            |   Primar lorem ipsum dolor sit amet, consectetur
+            |   adipiscing elit lorem ipsum dolor. 
+            strong Pellentesque risus mi
+            | , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum 
+            a felis venenatis
+            |  efficitur. Sit amet,
+            |   consectetur adipiscing elit
+          .notification.is-info
+            button.delete
+            |   Primar lorem ipsum dolor sit amet, consectetur
+            |   adipiscing elit lorem ipsum dolor. 
+            strong Pellentesque risus mi
+            | , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum 
+            a felis venenatis
+            |  efficitur. Sit amet,
+            |   consectetur adipiscing elit
+          .notification.is-success
+            button.delete
+            |   Primar lorem ipsum dolor sit amet, consectetur
+            |   adipiscing elit lorem ipsum dolor. 
+            strong Pellentesque risus mi
+            | , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum 
+            a felis venenatis
+            |  efficitur. Sit amet,
+            |   consectetur adipiscing elit
+          .notification.is-warning
+            button.delete
+            |   Primar lorem ipsum dolor sit amet, consectetur
+            |   adipiscing elit lorem ipsum dolor. 
+            strong Pellentesque risus mi
+            | , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum 
+            a felis venenatis
+            |  efficitur. Sit amet,
+            |   consectetur adipiscing elit
+          .notification.is-danger
+            button.delete
+            |   Primar lorem ipsum dolor sit amet, consectetur
+            |   adipiscing elit lorem ipsum dolor. 
+            strong Pellentesque risus mi
+            | , tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum 
+            a felis venenatis
+            |  efficitur. Sit amet,
+            |   consectetur adipiscing elit
+          h2.subtitle Progress
+          progress.progress.is-primary(value='15', max='100') 30%
+          progress.progress.is-link(value='30', max='100') 30%
+          progress.progress.is-info(value='45', max='100') 45%
+          progress.progress.is-success(value='60', max='100') 60%
+          progress.progress.is-warning(value='75', max='100') 75%
+          progress.progress.is-danger(value='90', max='100') 90%
+          br
+          progress.progress.is-small(value='15', max='100') 15%
+          progress.progress(value='30', max='100') 30%
+          progress.progress.is-medium(value='45', max='100') 45%
+          progress.progress.is-large(value='60', max='100') 60%
+          br
+          h2.subtitle Tag
+          span.tag.is-black Black
+          span.tag.is-dark Dark
+          span.tag.is-light Light
+          span.tag.is-white White
+          span.tag.is-primary Primary
+          span.tag.is-link Link
+          span.tag.is-info Info
+          span.tag.is-success Success
+          span.tag.is-warning Warning
+          span.tag.is-danger Danger
+          .is-clearfix
+            br
+          h2.subtitle Titles
+          .card
+            .card-content
+              h1.title Title
+              h2.subtitle Subtitle
+              hr
+              h1.title.is-1 Title 1
+              h2.title.is-2 Title 2
+              h3.title.is-3 Title 3
+              h4.title.is-4 Title 4
+              h5.title.is-5 Title 5
+              h6.title.is-6 Title 6
+              hr
+              h1.subtitle.is-1 Subtitle 1
+              h2.subtitle.is-2 Subtitle 2
+              h3.subtitle.is-3 Subtitle 3
+              h4.subtitle.is-4 Subtitle 4
+              h5.subtitle.is-5 Subtitle 5
+              h6.subtitle.is-6 Subtitle 6
+            //- card-content
+          //- card
+        //- column
+      //- columns
+      .columns
+        .column
+          .card
+            .card-content
+              table.table
+                thead
+                  tr
+                    th
+                      abbr(title='Position') Pos
+                    th Team
+                    th
+                      abbr(title='Played') Pld
+                    th
+                      abbr(title='Won') W
+                    th
+                      abbr(title='Drawn') D
+                    th
+                      abbr(title='Lost') L
+                    th
+                      abbr(title='Goals for') GF
+                    th
+                      abbr(title='Goals against') GA
+                    th
+                      abbr(title='Goal difference') GD
+                    th
+                      abbr(title='Points') Pts
+                    th Qualification or relegation
+                tfoot
+                  tr
+                    th
+                      abbr(title='Position') Pos
+                    th Team
+                    th
+                      abbr(title='Played') Pld
+                    th
+                      abbr(title='Won') W
+                    th
+                      abbr(title='Drawn') D
+                    th
+                      abbr(title='Lost') L
+                    th
+                      abbr(title='Goals for') GF
+                    th
+                      abbr(title='Goals against') GA
+                    th
+                      abbr(title='Goal difference') GD
+                    th
+                      abbr(title='Points') Pts
+                    th Qualification or relegation
+                tbody
+                  tr
+                    th 1
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Leicester_City_F.C.', title='Leicester City F.C.') Leicester City
+                      strong (C)
+                    td 38
+                    td 23
+                    td 12
+                    td 3
+                    td 68
+                    td 36
+                    td +32
+                    td 81
+                    td
+                      | Qualification for the 
+                      a(href='https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage', title='2016–17 UEFA Champions League') Champions League group stage
+                  tr
+                    th 2
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Arsenal_F.C.', title='Arsenal F.C.') Arsenal
+                    td 38
+                    td 20
+                    td 11
+                    td 7
+                    td 65
+                    td 36
+                    td +29
+                    td 71
+                    td
+                      | Qualification for the 
+                      a(href='https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage', title='2016–17 UEFA Champions League') Champions League group stage
+                  tr
+                    th 3
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Tottenham_Hotspur_F.C.', title='Tottenham Hotspur F.C.') Tottenham Hotspur
+                    td 38
+                    td 19
+                    td 13
+                    td 6
+                    td 69
+                    td 35
+                    td +34
+                    td 70
+                    td
+                      | Qualification for the 
+                      a(href='https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage', title='2016–17 UEFA Champions League') Champions League group stage
+                  tr.is-selected
+                    th 4
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Manchester_City_F.C.', title='Manchester City F.C.') Manchester City
+                    td 38
+                    td 19
+                    td 9
+                    td 10
+                    td 71
+                    td 41
+                    td +30
+                    td 66
+                    td
+                      | Qualification for the 
+                      a(href='https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Play-off_round', title='2016–17 UEFA Champions League') Champions League play-off round
+                  tr
+                    th 5
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Manchester_United_F.C.', title='Manchester United F.C.') Manchester United
+                    td 38
+                    td 19
+                    td 9
+                    td 10
+                    td 49
+                    td 35
+                    td +14
+                    td 66
+                    td
+                      | Qualification for the 
+                      a(href='https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Group_stage', title='2016–17 UEFA Europa League') Europa League group stage
+                  tr
+                    th 6
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Southampton_F.C.', title='Southampton F.C.') Southampton
+                    td 38
+                    td 18
+                    td 9
+                    td 11
+                    td 59
+                    td 41
+                    td +18
+                    td 63
+                    td
+                      | Qualification for the 
+                      a(href='https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Group_stage', title='2016–17 UEFA Europa League') Europa League group stage
+                  tr
+                    th 7
+                    td
+                      a(href='https://en.wikipedia.org/wiki/West_Ham_United_F.C.', title='West Ham United F.C.') West Ham United
+                    td 38
+                    td 16
+                    td 14
+                    td 8
+                    td 65
+                    td 51
+                    td +14
+                    td 62
+                    td
+                      | Qualification for the 
+                      a(href='https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Third_qualifying_round', title='2016–17 UEFA Europa League') Europa League third qualifying round
+                  tr
+                    th 8
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Liverpool_F.C.', title='Liverpool F.C.') Liverpool
+                    td 38
+                    td 16
+                    td 12
+                    td 10
+                    td 63
+                    td 50
+                    td +13
+                    td 60
+                    td
+                  tr
+                    th 9
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Stoke_City_F.C.', title='Stoke City F.C.') Stoke City
+                    td 38
+                    td 14
+                    td 9
+                    td 15
+                    td 41
+                    td 55
+                    td −14
+                    td 51
+                    td
+                  tr
+                    th 10
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Chelsea_F.C.', title='Chelsea F.C.') Chelsea
+                    td 38
+                    td 12
+                    td 14
+                    td 12
+                    td 59
+                    td 53
+                    td +6
+                    td 50
+                    td
+                  tr
+                    th 11
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Everton_F.C.', title='Everton F.C.') Everton
+                    td 38
+                    td 11
+                    td 14
+                    td 13
+                    td 59
+                    td 55
+                    td +4
+                    td 47
+                    td
+                  tr
+                    th 12
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Swansea_City_A.F.C.', title='Swansea City A.F.C.') Swansea City
+                    td 38
+                    td 12
+                    td 11
+                    td 15
+                    td 42
+                    td 52
+                    td −10
+                    td 47
+                    td
+                  tr
+                    th 13
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Watford_F.C.', title='Watford F.C.') Watford
+                    td 38
+                    td 12
+                    td 9
+                    td 17
+                    td 40
+                    td 50
+                    td −10
+                    td 45
+                    td
+                  tr
+                    th 14
+                    td
+                      a(href='https://en.wikipedia.org/wiki/West_Bromwich_Albion_F.C.', title='West Bromwich Albion F.C.') West Bromwich Albion
+                    td 38
+                    td 10
+                    td 13
+                    td 15
+                    td 34
+                    td 48
+                    td −14
+                    td 43
+                    td
+                  tr
+                    th 15
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Crystal_Palace_F.C.', title='Crystal Palace F.C.') Crystal Palace
+                    td 38
+                    td 11
+                    td 9
+                    td 18
+                    td 39
+                    td 51
+                    td −12
+                    td 42
+                    td
+                  tr
+                    th 16
+                    td
+                      a(href='https://en.wikipedia.org/wiki/A.F.C._Bournemouth', title='A.F.C. Bournemouth') AFC Bournemouth
+                    td 38
+                    td 11
+                    td 9
+                    td 18
+                    td 45
+                    td 67
+                    td −22
+                    td 42
+                    td
+                  tr
+                    th 17
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Sunderland_A.F.C.', title='Sunderland A.F.C.') Sunderland
+                    td 38
+                    td 9
+                    td 12
+                    td 17
+                    td 48
+                    td 62
+                    td −14
+                    td 39
+                    td
+                  tr
+                    th 18
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Newcastle_United_F.C.', title='Newcastle United F.C.') Newcastle United
+                      strong (R)
+                    td 38
+                    td 9
+                    td 10
+                    td 19
+                    td 44
+                    td 65
+                    td −21
+                    td 37
+                    td
+                      | Relegation to the 
+                      a(href='https://en.wikipedia.org/wiki/2016%E2%80%9317_Football_League_Championship', title='2016–17 Football League Championship') Football League Championship
+                  tr
+                    th 19
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Norwich_City_F.C.', title='Norwich City F.C.') Norwich City
+                      strong (R)
+                    td 38
+                    td 9
+                    td 7
+                    td 22
+                    td 39
+                    td 67
+                    td −28
+                    td 34
+                    td
+                      | Relegation to the 
+                      a(href='https://en.wikipedia.org/wiki/2016%E2%80%9317_Football_League_Championship', title='2016–17 Football League Championship') Football League Championship
+                  tr
+                    th 20
+                    td
+                      a(href='https://en.wikipedia.org/wiki/Aston_Villa_F.C.', title='Aston Villa F.C.') Aston Villa
+                      strong (R)
+                    td 38
+                    td 3
+                    td 8
+                    td 27
+                    td 27
+                    td 76
+                    td −49
+                    td 17
+                    td
+                      | Relegation to the 
+                      a(href='https://en.wikipedia.org/wiki/2016%E2%80%9317_Football_League_Championship', title='2016–17 Football League Championship') Football League Championship
+
+            //- card-content
+        //- column
+      //- columns
+    //- container
+  //- section
+
+block scripts
+  script.
+    $(document).ready(function() {
+
+    });

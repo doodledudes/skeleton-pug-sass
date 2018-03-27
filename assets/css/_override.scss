@@ -1,0 +1,14 @@
+// 1. Import the initial variables
+@import "../../bower_components/bulma/sass/utilities/initial-variables";
+@import "../../bower_components/bulma/sass/utilities/functions";
+
+// SAMPLE CUSTOM COLOR VAUES
+$primary :    #333138;
+$link :       #54494B;
+$info :       #F1F7ED;
+$success :    #91C7B1;
+$warning :    #E3D081;
+$danger :     #E23C31;
+
+// 6. Import the rest of Bulma
+@import "../../bower_components/bulma/bulma";

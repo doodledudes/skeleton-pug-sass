@@ -1,22 +1,29 @@
 header
-  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  nav.navbar.is-transparent
     .container
-      a.navbar-brand(href='#') Navbar
-      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarColor01', aria-controls='navbarColor01', aria-expanded='false', aria-label='Toggle navigation')
-        span.navbar-toggler-icon
-      #navbarColor01.collapse.navbar-collapse
-        ul.navbar-nav.mr-auto
-          li.nav-item.active
-            a.nav-link(href='#')
-              | Home 
-              span.sr-only (current)
-          li.nav-item
-            a.nav-link(href='#') Features
-          li.nav-item
-            a.nav-link(href='#') Pricing
-          li.nav-item
-            a.nav-link(href='#') About
-        form.form-inline
-          input.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search')
-          button.btn.btn-outline-info.my-2.my-sm-0(type='submit') Search
-//- footer
+      .navbar-brand
+        a.navbar-item(href='index.html')
+          img(src='https://bulma.io/images/bulma-logo.png', alt='Bulma: a modern CSS framework based on Flexbox', width='112', height='28')
+        //- a
+        .navbar-burger.burger(data-target='navbarExampleTransparentExample')
+          span
+          span
+          span
+        //- navbar-burger
+      //- navbar-brand
+      #navbarExampleTransparentExample.navbar-menu
+        .navbar-end
+          a.navbar-item(href='index.html')
+            | Form
+          //- a
+          a.navbar-item(href='elements.html')
+            | Elements
+          //- a
+          a.navbar-item(href='components.html')
+            | Components
+          //- a
+        //- navbar-end
+      //- navbar-menu
+    //- container
+  //- nav
+//- header

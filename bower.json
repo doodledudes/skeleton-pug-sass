@@ -15,22 +15,13 @@
     "tests"
   ],
   "dependencies": {
-    "font-awesome": "fontawesome#^4.5.0",
     "jquery": "^3.3.1",
-    "bootstrap": "^4.0.0"
+    "bulma": "^0.6.2"
   },
   "overrides": {
-    "bootstrap": {
+    "bulma": {
       "main": [
-        "**/*.min.css",
-        "**/fonts/*.*",
-        "**/dist/js/*.min.js"
-      ]
-    },
-    "font-awesome": {
-      "main": [
-        "**/*.min.css",
-        "**/fonts/*.*"
+        "**/css/*.css"
       ]
     }
   }
