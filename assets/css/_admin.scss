@@ -1,0 +1,245 @@
+@import "../../bower_components/bulma/sass/utilities/mixins";
+
+html#admin {
+  & {
+    background: #f2f2f2;
+  }
+  section:first-child {
+    padding-top: 0;
+  }
+  .card-content {
+    padding: .5rem;
+  }
+  .card-header-title {
+    // color: #41bb72;
+    color: #576161;
+  }
+  .message {
+    table {
+      background: transparent;
+    }
+  }
+}
+
+aside {
+  .menu-wrap {
+    padding: 15px;
+  }
+  &.--admin {
+    & {
+      -webkit-overflow-scrolling: touch;
+      z-index: 4;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: scroll; /* has to be scroll, not auto */
+      background: #2d3a3a;
+      transition: left ease-in-out .2s;
+    }
+    @include desktop {
+      & {
+        display: block;
+        left: 0;
+      }
+    }
+    &.visible {
+      left: 0;
+      & ~ .top-bar, & ~ .admin-wrap {
+        left: 250px;
+      }
+      &:not(.mobile) {
+        & ~ .top-bar, & ~ .admin-wrap {
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+.admin-wrap {
+  & {
+    position: relative;
+    left: 0;
+    padding: 91px 0 32px 0;
+    transition: left ease-in-out .2s;
+  }
+  @include touch {
+    & {
+      padding: 74px 15px 0;
+    }
+  }
+  @include desktop {
+    margin-left: 250px;
+  }
+}
+
+.admin-logo {
+  & {
+    height: 59px;
+    padding: 15px;
+    @include desktop {
+      background: #334141;
+    }
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    max-height: 30px;
+  }
+}
+
+.top-bar {
+  & {
+    display: flex;
+    z-index: 4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: flex-end;
+    width: calc(100% - 250px);
+    height: 59px;
+    margin-bottom: 32px;
+    margin-left: 250px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(10,10,10,0.1), 0 0 0 0 rgba(10,10,10,0.1);
+    background: #fff;
+    transition: left ease-in-out .2s;
+  }
+  @include touch {
+    & {
+      justify-content: space-between;
+      width: 100%;
+      margin: 0;
+      background: #334141;
+    }
+  }
+  .mobile-menu {
+    & {
+      margin-right: 15px;
+      color: inherit;
+      color: white;
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+  .avatar {
+    & {
+      height: 24px;
+    }
+    img {
+      max-height: 100%;
+    }
+  }
+}
+
+// ===============================[ADMIN CUSTOM CSS]============================
+.control {
+  input, textarea {
+    box-shadow: none;
+  }
+}
+.key-details {
+  & {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  > .column {
+    & {
+      // display: flex;
+      // flex-flow: column;
+      // align-items: center;
+      // align-items: stretch;
+    }
+    .wrap {
+      display: flex;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      align-items: stretch;
+      border-radius: 4px;
+      height: 100%;
+      box-shadow: 0 1px 3px rgba(10,10,10,0.1), 0 0 0 0 rgba(10,10,10,0.1);
+      .icon {
+        flex-grow: 1;
+        width: 100%;
+        padding: 30px 20px;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+        background: #ff715b;
+        color: white;
+        font-size: 2rem;
+      }
+      label {
+        display: block;
+        display: flex;
+        flex-grow: 100;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0 15px 10px;
+        background: white;
+        color: gray;
+        font-size: .9rem;
+        text-align: center;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+      .card-title {
+        padding: 8px 3px;
+        color: #576161;
+        font-size: .9rem;
+        font-weight: bold;
+        text-align: center;
+        text-transform: capitalize;
+        background: white;
+      }
+    }
+
+    &.is-success {
+      .icon {
+        background: #41bb72;
+      }
+    }
+  }
+}
+.--membership-details {
+  .wrap {
+    padding: 15px;
+    &.left {
+
+    }
+    &.right {
+      height: 100%;
+      strong {
+
+      }
+    }
+    label {
+
+    }
+  }
+}
+.--contact {
+  .card {
+    header {
+      background: #ff715b;
+      color: white !important;
+      padding: 25px;
+      font-size: 1.5rem;
+      font-weight: normal;
+      outline: 8px solid #ff715b;
+    }
+  }
+  .field {
+    .label {
+      color: #969696;
+      font-size: .8rem;
+    }
+  }
+}
+// ===============================[ADMIN CUSTOM CSS END]========================

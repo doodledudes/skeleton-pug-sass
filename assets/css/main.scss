@@ -1,18 +1,11 @@
-@import '_mixins';
+@import '_admin';
 @import '_override';
 
 html {
-  // Fluid-type Settings
-  font-size: 16px;
+
 }
 body {
-  // Fluid-type Settings
-  font-size: 62.5%;
-  background: #f5f5f5;
+
 }
 
 // =============================================================================[ CUSTOM CSS ]
-
-.button {
-  margin: 0 3px;
-}

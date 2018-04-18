@@ -1,13 +1,13 @@
 doctype html
-html(lang="en")
+html#admin(lang="en")
   head
     // Title block allowing child pages to override
-    title Skeleton for Pug and Sass
+    title Welcome to Strata Portal
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
     meta(name="description", content="")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    link(rel="icon", type="image/png", href="assets/images/favicon.ico")
+    link(rel="icon", type="image/x-icon", href="assets/images/favicon.ico")
     
     //- CDN
     script(defer, src="//use.fontawesome.com/releases/v5.0.6/js/all.js")
@@ -29,11 +29,11 @@ html(lang="en")
     <![endif]-->
   body
     
-    include ../includes/_header.pug
-    
-    block content
-    
-    include ../includes/_footer.pug
+    #app
+      
+      include ../includes/_aside.pug
+      
+      block content
     
     //- BOWER COMPONENTS
     // bower:js
@@ -45,3 +45,5 @@ html(lang="en")
 
     //- PAGE SCRIPTS
     block scripts
+    script.
+      

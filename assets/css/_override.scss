@@ -3,12 +3,51 @@
 @import "../../bower_components/bulma/sass/utilities/functions";
 
 // SAMPLE CUSTOM COLOR VAUES
-$primary :    #333138;
-$link :       #54494B;
-$info :       #F1F7ED;
-$success :    #91C7B1;
-$warning :    #E3D081;
-$danger :     #E23C31;
+$link                               : #016FB9;
+$primary                            : #41bb72;
+// $info                               : #016FB9;
+$success                            : #91C7B1;
+$warning                            : #E3D081;
+$danger                             : #FF715B;
+// $primary                            : #87B6A7;
+// $info                               : #226CE0;
+// $success                            : #04F06A;
+// $warning                            : #FFFF82;
+// $danger                             : #A44A3F;
+
+
+// ALL
+$radius                             : 2px;
+// NAVBAR
+$navbar-height                      : 4rem;
+// $navbar-item-hover-color            : $dark;
+// FOOTER
+$footer-background-color            : white;
+// MENU
+$menu-item-color                    : #dbdbdb;
+$menu-item-radius                   : 0;
+$menu-item-active-background-color  : transparent;
+$menu-item-hover-background-color   : transparent;
+$menu-item-active-color             : $danger;
+$menu-item-hover-color              : $danger;
+$menu-label-color                   : #5b7777;
+$menu-list-border-left              : 1px solid #3a4e4e;
+
+// CARD
+$card-shadow	                      : 0 1px 3px rgba($black, 0.1), 0 0 0 0 rgba($black, 0.1);
+
+// 5. Add new color variables to the color map.
+@import "../../bower_components/bulma/sass/utilities/derived-variables";
+$addColors: (
+  "sample-color":(blue, white)
+);
+$colors: map-merge($colors, $addColors);
 
 // 6. Import the rest of Bulma
 @import "../../bower_components/bulma/bulma";
+
+
+
+.table:last-child {
+  margin-bottom: 0;
+}

@@ -1,69 +1,253 @@
-extends ./layout/_layout.pug
+extends ./layout/_admin.pug
 
 block content
-
-  section.section
-    .container
-      h1.title Form
-      hr
-      h2.subtitle Form Control
-      .card
-        .card-content
-          .field
-            label.label Name
-            .control
-              input.input(type='text', placeholder='Text input')
-          .field
-            label.label Username
-            .control.has-icons-left.has-icons-right
-              input.input.is-success(type='text', placeholder='Text input', value='bulma')
-              span.icon.is-small.is-left
-                i.fas.fa-user
-              span.icon.is-small.is-right
-                i.fas.fa-check
-            p.help.is-success This username is available
-          .field
-            label.label Email
-            .control.has-icons-left.has-icons-right
-              input.input.is-danger(type='email', placeholder='Email input', value='hello@')
-              span.icon.is-small.is-left
-                i.fas.fa-envelope
-              span.icon.is-small.is-right
-                i.fas.fa-exclamation-triangle
-            p.help.is-danger This email is invalid
-          .field
-            label.label Subject
-            .control
-              .select
-                select
-                  option Select dropdown
-                  option With options
-          .field
-            label.label Message
-            .control
-              textarea.textarea(placeholder='Textarea')
-          .field
-            .control
-              label.checkbox
-                input(type='checkbox')
-                |       I agree to the 
-                a(href='#') terms and conditions
-          .field
-            .control
-              label.radio
-                input(type='radio', name='question')
-                |       Yes
-              label.radio
-                input(type='radio', name='question')
-                |       No
-          .field.is-grouped
-            .control
-              button.button.is-link Submit
-            .control
-              button.button.is-text Cancel
-
-        //- card-content
-      //- card
+  
+  .admin-wrap
+    .container.is-fluid
+      .field.has-addons
+        .control.is-expanded
+          input.input.is-default.is-medium.is-rounded(type="text", placeholder="Customer Name, Email, Login Name, Account ID...")
+        //- control
+        .control
+          a.button.is-danger.is-medium.is-rounded
+            i.fas.fa-search
+          //- a
+        //- control
+      //- field
+      br
+      h2.title.has-text-centered.is-size-4
+        i.fas.fa-map-marker-alt
+        | &nbsp;1 - 12 Queen Street Arncliffe NSW 2205
+      //- h2
+      .columns.key-details
+        .column.is-4.is-half-mobile
+          .wrap
+            .icon
+              i.far.fa-building
+            //- icon
+            .card-title Strata
+            label 2 - Lot (Owner): 11306 1/1 BAY CUSTODIANS NO. 2 P/L
+          //- wrap
+        //- column
+        .column.is-4.is-half-mobile
+          .wrap
+            .icon
+              i.far.fa-address-card
+            //- icon
+            .card-title Address
+            label 12 QUEEN STREET, ARNCLIFFE, NSW 2205
+          //- wrap
+        //- column
+        .column.is-4.is-6-mobile
+          .wrap
+            .icon
+              i.fas.fa-tag
+            //- icon
+            .card-title Plan Number
+            label 11306
+          //- wrap
+        //- column
+        .column.is-2.is-6-mobile
+          .wrap
+            .icon
+              i.fas.fa-angle-double-right.fa-xs
+              i.fas.fa-users
+            //- icon
+            .card-title Next AGM
+            label 04/10/2018
+          //- wrap
+        //- column
+        .column.is-2.is-6-mobile
+          .wrap
+            .icon
+              i.fas.fa-users
+              i.fas.fa-angle-double-left.fa-xs
+            //- icon
+            .card-title Last AGM
+            label 04/10/2017
+          //- wrap
+        //- column
+        .column.is-6-mobile
+          .wrap
+            .icon
+              i.fas.fa-dollar-sign
+            //- icon
+            .card-title Total Liabilities
+            label 0.00
+          //- wrap
+        //- column
+        .column.is-success
+          .wrap
+            .icon
+              i.fas.fa-user-circle
+            //- icon
+            .card-title Managed by	
+            label John Touma - DS
+          //- wrap
+        //- column
+      //- columns
+      .columns
+        .column
+          .card.is-size-7.--membership-details
+            header.card-header
+              p.card-header-title
+                | Membership Details
+              //- p
+            //- header
+            .columns.is-gapless
+              .column
+                .wrap.left
+                  .columns.is-flex-touch
+                    .column.is-half-touch
+                      label Liability Units
+                    //- column
+                    .column.is-half-touch
+                      strong 0.00
+                    //- column
+                  //- columns
+                  .columns.is-flex-touch
+                    .column.is-half-touch
+                      label Entitlement Units
+                    //- column
+                    .column.is-half-touch
+                      strong 1,000.00
+                    //- column
+                  //- columns
+                  .columns.is-flex-touch
+                    .column.is-half-touch
+                      label Accessory Units
+                    //- column
+                    .column.is-half-touch
+                      strong 0.0
+                    //- column
+                  //- columns
+                  .columns.is-flex-touch
+                    .column.is-half-touch
+                      label Lot Number
+                    //- column
+                    .column.is-half-touch
+                      strong 0
+                    //- column
+                  //- columns
+                  .columns.is-flex-touch
+                    .column.is-half-touch
+                      label Fees Outstanding
+                    //- column
+                    .column.is-half-touch
+                      strong $0.00
+                    //- column
+                  //- columns
+                  .columns.is-flex-touch
+                    .column.is-half-touch
+                      label Other Outstanding
+                    //- column
+                    .column.is-half-touch
+                      strong $0.00
+                    //- column
+                  //- columns
+                //- wrap
+              //- column
+              .column
+                .wrap.right
+                  .columns.is-flex-touch
+                    .column.is-half-touch
+                      label Fees
+                    //- column
+                    .column.is-half-touch
+                      strong $0.00
+                    //- column
+                  //- columns
+                  .columns.is-flex-touch
+                    .column.is-half-touch
+                      label Paid To
+                    //- column
+                    .column.is-half-touch
+                      strong N/A
+                    //- column
+                  //- columns
+                  .columns.is-flex-touch
+                    .column.is-half-touch
+                      label Credit Amount
+                    //- column
+                    .column.is-half-touch
+                      strong $0.00
+                    //- column
+                  //- columns
+                  .columns.is-flex-touch
+                    .column.is-half-touch
+                      label Interest Accrued
+                    //- column
+                    .column.is-half-touch
+                      strong $0.00
+                    //- column
+                  //- columns
+                  .columns.is-flex-touch.is-hidden-mobile
+                    .column.is-half-touch
+                      label &nbsp;
+                    //- column
+                    .column.is-half-touch
+                      strong &nbsp;
+                    //- column
+                  //- columns
+                  .columns.is-flex-touch
+                    .column.is-half-touch
+                      label Total Outstanding
+                    //- column
+                    .column.is-half-touch
+                      strong $0.00
+                    //- column
+                  //- columns
+                //- wrap
+              //- column
+            //- columns
+          //- card
+        //- column
+        .column.is-5
+          .card.is-size-7
+            header.card-header
+              p.card-header-title
+                | Due Notices
+              //- p
+            //- header
+            .card-content
+              p.subtitle.is-size-7 Nothing to display
+            //- card-content
+          //- card
+          br
+          .card.is-size-7
+            header.card-header
+              p.card-header-title
+                | Reciepts
+              //- p
+            //- header
+            .card-content
+              p.subtitle.is-size-7 Nothing to display
+            //- card-content
+          //- card
+          br
+          .card.is-size-7
+            header.card-header
+              p.card-header-title
+                | Meetings
+              //- p
+            //- header
+            .card-content
+              p.subtitle.is-size-7 Nothing to display
+            //- card-content
+          //- card
+          br
+          .card.is-size-7
+            header.card-header
+              p.card-header-title
+                | Documents
+              //- p
+            //- header
+            .card-content
+              p.subtitle.is-size-7 Nothing to display
+            //- card-content
+          //- card
+        //- column
+      //- columns
     //- container
   //- section
 
