@@ -58,45 +58,4 @@ aside.menu.--admin(v-bind:class="[{'visible': isVisible}, {'mobile': isMobile}]"
   //- menu-wrap
 //- aside
 
-.top-bar
-  a.mobile-menu.is-hidden-desktop(@click='toggleMobileMenu()')
-    i.fas.fa-bars
-  //- a
-  .admin-logo.is-hidden-desktop
-    img(src='assets/images/logo-piq.png', alt='PIQ Strata')
-  //- admin-logo
-  .dropdown.is-right.is-pulled-right(v-bind:class="{ 'is-active': isActive }")
-    .dropdown-trigger
-      button.button.is-rounded.is-white(aria-haspopup="false", aria-controls="dropdown-user-menu", @click='toggleDropdown()', @blur='toggleDropdown()')
-        span.avatar
-          img(src='assets/images/favicon.png', alt='PIQ Strata')
-        //- span
-        | &nbsp;
-        p.is-hidden-touch
-          strong Rodan Luzuriaga
-        //- p
-        span.icon.is-small
-          i.fas.fa-angle-down(aria-hidden="true")
-        //- span
-      //- dropdown-trigger
-    //- dropdown
-    #dropdown-user-menu.dropdown-menu(role="menu")
-      .dropdown-content
-        .dropdown-item.is-hidden-desktop
-          p
-            strong Rodan Luzuriaga
-          //- p
-        //- dropdown-item
-        hr.dropdown-divider.is-hidden-desktop
-        a.dropdown-item(href="#")
-          i.fas.fa-cog
-          | &nbsp;Account Settings
-        //- a
-        a.dropdown-item(href="#")
-          i.fas.fa-sign-out-alt
-          | &nbsp;Log out
-        //- a
-      //- dropdown-content
-    //- dropdown-menu
-  //- dropdown
-//- top-bar
+include _topbar.pug

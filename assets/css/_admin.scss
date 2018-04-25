@@ -36,8 +36,9 @@ aside {
       height: 100%;
       overflow-x: hidden;
       overflow-y: scroll; /* has to be scroll, not auto */
-      background: #2d3a3a;
+      background: #333;
       transition: left ease-in-out .2s;
+      font-size: 1.1rem;
     }
     @include desktop {
       & {
@@ -68,7 +69,7 @@ aside {
   }
   @include touch {
     & {
-      padding: 74px 15px 0;
+      padding: 80px 15px 0;
     }
   }
   @include desktop {
@@ -78,35 +79,29 @@ aside {
 
 .admin-logo {
   & {
-    height: 59px;
-    padding: 15px;
+    height: 64px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     @include desktop {
-      background: #334141;
+      background: darken(#333,3%);
+      outline: 1px solid darken(#333,5%);
     }
   }
   img {
     display: block;
     max-width: 100%;
-    max-height: 30px;
+    max-height: 58px;
   }
 }
 
 .top-bar {
   & {
-    display: flex;
-    z-index: 4;
-    position: fixed;
-    top: 0;
-    left: 0;
-    align-items: center;
-    justify-content: flex-end;
     width: calc(100% - 250px);
     height: 59px;
-    margin-bottom: 32px;
     margin-left: 250px;
-    padding: 15px;
     box-shadow: 0 1px 3px rgba(10,10,10,0.1), 0 0 0 0 rgba(10,10,10,0.1);
-    background: #fff;
     transition: left ease-in-out .2s;
   }
   @include touch {
@@ -119,21 +114,18 @@ aside {
   }
   .mobile-menu {
     & {
-      margin-right: 15px;
-      color: inherit;
-      color: white;
+      margin-left: 0;
+      margin-right: auto;
     }
     &:focus {
       outline: 0;
     }
   }
-  .avatar {
-    & {
-      height: 24px;
-    }
-    img {
-      max-height: 100%;
-    }
+  .menu-drop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
   }
 }
 
@@ -141,105 +133,6 @@ aside {
 .control {
   input, textarea {
     box-shadow: none;
-  }
-}
-.key-details {
-  & {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  > .column {
-    & {
-      // display: flex;
-      // flex-flow: column;
-      // align-items: center;
-      // align-items: stretch;
-    }
-    .wrap {
-      display: flex;
-      display: flex;
-      flex-flow: column;
-      align-items: center;
-      align-items: stretch;
-      border-radius: 4px;
-      height: 100%;
-      box-shadow: 0 1px 3px rgba(10,10,10,0.1), 0 0 0 0 rgba(10,10,10,0.1);
-      .icon {
-        flex-grow: 1;
-        width: 100%;
-        padding: 30px 20px;
-        border-top-right-radius: 4px;
-        border-top-left-radius: 4px;
-        background: #ff715b;
-        color: white;
-        font-size: 2rem;
-      }
-      label {
-        display: block;
-        display: flex;
-        flex-grow: 100;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding: 0 15px 10px;
-        background: white;
-        color: gray;
-        font-size: .9rem;
-        text-align: center;
-        border-bottom-right-radius: 4px;
-        border-bottom-left-radius: 4px;
-      }
-      .card-title {
-        padding: 8px 3px;
-        color: #576161;
-        font-size: .9rem;
-        font-weight: bold;
-        text-align: center;
-        text-transform: capitalize;
-        background: white;
-      }
-    }
-
-    &.is-success {
-      .icon {
-        background: #41bb72;
-      }
-    }
-  }
-}
-.--membership-details {
-  .wrap {
-    padding: 15px;
-    &.left {
-
-    }
-    &.right {
-      height: 100%;
-      strong {
-
-      }
-    }
-    label {
-
-    }
-  }
-}
-.--contact {
-  .card {
-    header {
-      background: #ff715b;
-      color: white !important;
-      padding: 25px;
-      font-size: 1.5rem;
-      font-weight: normal;
-      outline: 8px solid #ff715b;
-    }
-  }
-  .field {
-    .label {
-      color: #969696;
-      font-size: .8rem;
-    }
   }
 }
 // ===============================[ADMIN CUSTOM CSS END]========================

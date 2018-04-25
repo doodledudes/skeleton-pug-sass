@@ -1,0 +1,44 @@
+nav.navbar.is-white.is-fixed-top.top-bar
+  .navbar-brand.is-hidden-desktop
+    .navbar-burger.burger.mobile-menu.is-hidden-desktop(@click='toggleMobileMenu()')
+      span
+      span
+      span
+    //- navbar-burger
+    a.navbar-item(href="")
+      img(src='assets/images/logo-piq.png', alt='PIQ Strata')
+    //- a
+    .navbar-burger.burger.menu-drop(data-target="navbarExampleTransparentExample")
+      i.fa.fa-angle-down
+    //- navbar-burger
+  //- navbar-brand
+  #navbarExampleTransparentExample.navbar-menu
+    .navbar-start
+      a.navbar-item(href="dashboard-get-organised.html")
+        | Get Organised
+      //- a
+      a.navbar-item(href="dashboard-get-the-job.html")
+        | Get The Job
+      //- a
+      a.navbar-item(href="dashboard-do-the-job.html")
+        | Do The Job
+      //- a
+    //- navbar-start
+    .navbar-end
+      a.navbar-item(href="")
+        | Help
+      //- a
+      .navbar-item.has-dropdown.is-hoverable
+        a.navbar-link(href="")
+          i.fas.fa-user-circle
+          | &nbsp;My Account
+        //- a
+        .navbar-dropdown.is-boxed.is-right
+          a.navbar-item(href="index.html")
+            | Log Out
+          //- a
+        //- navbar-dropdown
+      //- navbar-item
+    //- navbar-end
+  //- navbar-menu
+//- nav

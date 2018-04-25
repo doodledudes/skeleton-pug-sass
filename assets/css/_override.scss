@@ -4,42 +4,57 @@
 
 // SAMPLE CUSTOM COLOR VAUES
 $link                               : #016FB9;
-$primary                            : #41bb72;
-// $info                               : #016FB9;
-$success                            : #91C7B1;
+$primary                            : #e08a57;
+$info                               : #016FB9;
+$success                            : #00a077;
 $warning                            : #E3D081;
 $danger                             : #FF715B;
-// $primary                            : #87B6A7;
-// $info                               : #226CE0;
-// $success                            : #04F06A;
-// $warning                            : #FFFF82;
-// $danger                             : #A44A3F;
 
 
 // ALL
 $radius                             : 2px;
+
+// FORMS
+$input-focus-border-color           : #ddd;
+$input-focus-box-shadow-color       : rgba(#ccc, 0.25);
+
 // NAVBAR
 $navbar-height                      : 4rem;
+$navbar-item-img-max-height         : 3.5rem;
 // $navbar-item-hover-color            : $dark;
+
 // FOOTER
-$footer-background-color            : white;
+$footer-background-color            : $success;
+
 // MENU
 $menu-item-color                    : #dbdbdb;
 $menu-item-radius                   : 0;
 $menu-item-active-background-color  : transparent;
 $menu-item-hover-background-color   : transparent;
-$menu-item-active-color             : $danger;
-$menu-item-hover-color              : $danger;
-$menu-label-color                   : #5b7777;
-$menu-list-border-left              : 1px solid #3a4e4e;
+$menu-item-active-color             : $success;
+$menu-item-hover-color              : $primary;
+$menu-label-color                   : #717171;
+$menu-list-border-left              : 1px solid darken(#717171, 15%);
+$navbar-dropdown-boxed-radius       : 2px;
+$navbar-dropdown-boxed-shadow       : 0 1px 3px rgba($black, 0.1), 0 0 0 0 rgba($black, 0.1);
 
 // CARD
 $card-shadow	                      : 0 1px 3px rgba($black, 0.1), 0 0 0 0 rgba($black, 0.1);
 
-// 5. Add new color variables to the color map.
+
+// Setup your Custom Colors
+$linkedin: #0077b5;
+$linkedin-invert: findColorInvert($linkedin);
+$twitter: #55acee;
+$twitter-invert: findColorInvert($twitter);
+$github: #333;
+$github-invert: findColorInvert($github);
+// Add new color variables to the color map.
 @import "../../bower_components/bulma/sass/utilities/derived-variables";
 $addColors: (
-  "sample-color":(blue, white)
+  "twitter":($twitter, $twitter-invert),
+  "linkedin": ($linkedin, $linkedin-invert),
+  "github": ($github, $github-invert)
 );
 $colors: map-merge($colors, $addColors);
 
