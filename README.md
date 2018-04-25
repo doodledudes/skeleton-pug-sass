@@ -1,7 +1,8 @@
 ---
 # What's new
-- angularjs (AngularJS v1.6.5)
-- gulp-inject (no more manual linking of js/css on the page)
+- Bulma
+- Vuejs
+- Happiness
 ---
 # skeleton-pug-sass
 A starter template using pug and sass.
@@ -30,22 +31,24 @@ Running the **'npm install'** will install the following dependencies I have spe
 - gulp-sass
 - browser-sync (if you prefer you may just serve your project using [harpjs](http://harpjs.com/))
 - gulp-autoprefixer (optional)
+- etc...
 
 Same with **'bower install'** this will install the **bower** components that I have specified on the **'bower.json'**.
 - jQuery
 - font-awesome
+- etc...
 
 ## What else do I need?
 Run [gulp](http://gulpjs.com/) for the first time on your **Terminal**. This should only be ran ones.
 
 But if for instance you have added new plugins or assets like images and new css files, you should run this command again.
 ```
-$ gulp
+$ gulp main
 ```
 and
 ```
-$ gulp serve
+$ gulp main serve
 ```
-What **'gulp serve'** does is it runs the **'serve'** task inside the **'gulpfile.js'**, automatically open up a new browser window and watch your **'pug'** and **'sass'** files.
+What **'gulp main serve'** does is it runs the **'main'** and **'serve'** task inside the **'gulpfile.js'**, automatically open up a new browser window and watch your **'pug'** and **'sass'** files.
 
 If you're not familiar with ['Pug'](https://pugjs.org/api/getting-started.html) and ['Sass'](http://sass-lang.com/) you can visit their site and look for the documentation. Enjoy!
