@@ -15,7 +15,7 @@ You can use this skeleton as a starting point on writing your code in pug and sc
 
 ## How does it work?
 Dont think too much. It's easy. Just install the following and follow the instructions.
-- [Node](https://nodejs.org/en/download/package-manager/)
+- [Node](https://nodejs.org/en/download/package-manager/) (v8.16.0)
 - [Bower](https://bower.io/#install-bower)
 - [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 
